@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<html lang = "en">
+   <head></head>
+   <body>
+      
+      <h3>
+         Liste des Maires
+      </h3>
+      		
+      
+      <table>
+         <thead>
+            <tr>
+               <th>Id_maire</th>
+               <th>Code_insee</th>
+               <th>Departement</th>
+               <th>Ville</th>
+               <th>Population</th>
+               <th>Nom_maire</th>
+               <th>Prenom_maire</th>
+               <th>Sexe maire</th>
+               <th>Date de naissance</th>
+               <th>Csp maire</th>
+               <th>Intitulé</th>
+               <th>Page web 1</th>
+               <th>Page web 2</th>
+               <th>Page web 3</th>
+               <th>most occurrences 1</th>
+               <th>most occurrences 2</th>
+               <th>most occurrences 3</th>
+               <th>Orientation politique</th>
+            </tr>
+         </thead>
+         
+         <tbody>
+            {% for maire in Maires %}
+               <tr>
+                  <td>{{ maire.ID_maire  }}</td>
+                  <td>{{ maire.insee_code }}</td>
+                  <td>{{ maire.department }}</td>
+                  <td>{{ maire.commun }}</td>
+                  <td>{{ maire.population }}</td>
+                  <td>{{ maire.maire_firstname }}</td>
+                  <td>{{ maire.maire_surname }}</td>
+                  <td>{{ maire.maire_sex }}</td>
+                  <td>{{ maire.maire_birth_date }}</td>
+                  <td>{{ maire.maire_csp }}</td>
+                  <td>{{ maire.csp_title }}</td>
+                  <td>{{ maire.web_page_1 }}</td>
+                  <td>{{ maire.web_page_2 }}</td>
+                  <td>{{ maire.web_page_3 }}</td>
+                  <td>{{ maire.most_occurrences_1 }}</td>
+                  <td>{{ maire.most_occurrences_2 }}</td>
+                  <td>{{ maire.most_occurrences_3 }}</td>
+                  <td>{{ maire.political_orientation  }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+      
+   </body>
+</html>
